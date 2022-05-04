@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<title>wAnywhere - Meeting</title>
+	<link rel="Shortcut icon" href="images/favicon.png">
+	<link rel="stylesheet" href="css/fonts/stylesheet.css">
+	<link rel="stylesheet" href="css/mdb.min.css">
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="css/slick.css">
+	<link rel="stylesheet" href="css/fonts/stylesheet.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/magnific-popup.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+
+	<!-- YOUR SCREEN IS SHARED -->
+	<div class="share-screen-wrapper">
+		<h3>You Are Sharing Your Screen...</h3>
+	</div>
+
+	<div class="alimeet_section">
+		<div class="mn_inr_header">
+			<div class="mn_inr_header_left">
+				<img src="images/wConnect.png" alt="">
+			</div>
+			<div class="metting_name_content">My Session</div>
+			<div class="mn_inr_header_right">
+				<ul>
+					<li onclick="copyToClipboard('this is working')">
+						<div class="icon">
+							<img src="images/copy.svg" width="60" height="60" alt="">
+						</div>
+						<div class="help_name">
+							Copy Meeting URL
+						</div>
+					</li>
+					<li>
+						<div class="icon">
+							<img src="images/user-list.svg" alt="">
+						</div>
+						<span class="count-badge">0</span>
+						<div class="help_name">
+							Coming Soon
+						</div>
+					</li>
+					<li>
+						<div class="icon">
+							<img src="images/participants.svg" alt="">
+						</div>
+						<span class="count-badge">3</span>
+						<div class="help_name">
+							Coming Soon
+						</div>
+					</li>
+					<li>
+						<div class="icon">
+							<img src="images/message.svg" alt="">
+						</div>
+						<div class="help_name">
+							Coming Soon
+						</div>
+					</li>
+					<li>
+						<div class="icon TileView">
+							<img src="images/tileview.svg" alt="">
+						</div>
+						<div class="help_name">
+							Coming Soon
+						</div>
+					</li>
+					<li>
+						<div class="icon">
+							<img src="images/question.svg" alt="">
+						</div>
+						<div class="help_name">
+							Coming Soon
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="meeting_videos_bg">
+			<div class="meeting_videos_user_box">
+				<div class="user_meeting_inr_box_otr user4">
+					<div class="user_col"><a class="meeting_inr_col_text_box open_popup" href="#test-modal"></a></div>
+					<div class="user_col"><a class="meeting_inr_col_text_box open_popup" href="#test-modal"></a></div>
+					<div class="user_col"><a class="meeting_inr_col_text_box open_popup" href="#test-modal"></a></div>
+					<div class="user_col"><a class="meeting_inr_col_text_box open_popup" href="#test-modal"></a></div>
+				</div>
+				<!-- Open Popup Html -->
+				<div id="test-modal" class="white-popup-block mfp-hide">
+					<div class="popup_videos_box">
+						<a class="popup-modal-dismiss close_icon" href="#">
+							<svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path d="M11 1L1 11M1 1L11 11" stroke="#656185" stroke-width="1.5"></path>
+							</svg>
+						</a>
+						<h1>Open Popup</h1>
+						<p>You won't be able to dismiss this by usual means (escape or
+							click button), but you can close it programatically based on
+							user choices or actions.</p>
+					</div>
+				</div>
+				<!-- Open Popup Html -->
+			</div>
+			<div class="main_meeting_videos">
+				<div class="user_box_list">
+					<div class="user_box_inr">
+					</div>
+				</div>
+				<img src="images/videos_img.jpg" class='local_video_mute_img d-none' alt="">
+			</div>
+		</div>
+		<div class="call_inr_otr">
+			<div class="mn_inr_header_right call_inr_top">
+				<ul>
+					<li>
+						<div class="icon">
+							<img src="images/user-group.svg" alt="">
+						</div>
+						<div class="help_name">Coming Soon</div>
+					</li>
+					<li>
+						<div class="icon">
+							<img src="images/setting.svg" alt="">
+						</div>
+						<div class="help_name">Coming Soon</div>
+					</li>
+				</ul>
+			</div>
+			<div class="mn_inr_header_right call_inr_center">
+				<ul>
+					<li>
+						<div onclick="onVideoMuteStateChanged()" class="icon ToggleIconBox" id="video-icon">
+							<div class="videos_on">
+								<img src="images/videos_on_icon.svg" alt="">
+								<div class="help_name">Stop Video</div>
+							</div>
+							<div class="videos_off">
+								<img src="images/videos_off_icon.svg" alt="">
+								<div class="help_name">Start Video</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div onclick="muteHandler()" class="icon ToggleIconBox">
+							<div class="videos_on">
+								<img src="images/audia_on.svg" alt="">
+								<div class="help_name">Mute Audio</div>
+							</div>
+							<div class="videos_off">
+								<img src="images/audia_off.svg" alt="">
+								<div class="help_name">Start Audio</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div onclick="switchVideo()" class="icon ToggleIconBox share-screen-icon">
+							<div class="videos_off">
+								<img src="images/stop_screen_share_icon.svg" alt="">
+								<div class="help_name">Stop Screen</div>
+							</div>
+							<div class="videos_on">
+								<img src="images/screen_share_icon.svg" alt="">
+								<div class="help_name">Screen Share</div>
+							</div>
+						</div>
+					</li>
+					
+				</ul>
+			</div>
+			<div class="mn_inr_header_right">
+				<ul>
+					<li>
+						<div class="icon" onclick="unload()">
+							<img src="images/call_end.svg" alt="">
+						</div>
+						<div class="help_name">End Meeting</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script crossorigin src="https://meet.jit.si/libs/lib-jitsi-meet.min.js"></script>
+	<script src="js/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mdb.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/jquery.magnific-popup.js"></script>
+	<script src="js/custom.js" type="text/javascript" charset="utf-8"></script>
+	<script src="example.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+
+		// function copyToClipboard() {
+		// 	let meetingId = localStorage.getItem('Meetingid');
+		// 	var copyText = `
+		// 	Meeting URL: https://frontendarmy.com/jitsifrontendarmy/User-Meeting-Detail.html
+		// 	Meeting ID : ${meetingId}
+		// 	`;
+		// 	// copyText.select();
+		// 	// copyText.setSelectionRange(0, 99999)
+		// 	document.execCommand("copy");
+		// 	alert("Copied the text: " + copyText.value);
+		// }
+
+		// function copyToClipboard(text) {
+		// 	if (window.clipboardData) { // Internet Explorer
+		// 		window.clipboardData.setData("Text", text);
+		// 	} else {
+		// 		unsafeWindow.netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+		// 		const clipboardHelper = Components.classes["@mozilla.org/widget/clipboardhelper;1"].getService(Components.interfaces.nsIClipboardHelper);
+		// 		clipboardHelper.copyString(text);
+		// 	}
+		// }
+
+		function copyToClipboard(text) {
+			var dummy = document.createElement("textarea");
+			// to avoid breaking orgain page when copying more words
+			// cant copy when adding below this code
+			// dummy.style.display = 'none'
+			document.body.appendChild(dummy);
+			let meetingId = localStorage.getItem('meetingId');
+			//Be careful if you use texarea. setAttribute('value', value), which works with "input" does not work with "textarea". – Eduard
+			dummy.value = 'Meeting URL: https://frontendarmy.com/jitsifrontendarmy/User-Meeting-Detail.html Meeting ID :' + meetingId;
+			dummy.select();
+			document.execCommand("copy");
+			document.body.removeChild(dummy);
+		}
+		
+		 
+
+	</script>
+</body>
+
+</html>

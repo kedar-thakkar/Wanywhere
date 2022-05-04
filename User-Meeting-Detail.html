@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>wAnywhere</title>
+    <link rel="Shortcut icon" href="images/fevicone.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+</head>
+
+<body>
+
+    <div class="memoria_div">
+        <div class="login_box_otr">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/wConnect.png" style="max-width:50%">
+                </a>
+            </div>
+            <div class="login_sign_box">
+                <div class="form_box">
+                    <div class="input_box">
+                        <label>Enter name</label>
+                        <input type="text" id="username" name="username">                        
+                    </div>
+                    <div class="input_box">
+                        <label>Enter Meeting Id</label>
+                        <input type="text" id="Meetingid" name="Meetingid">
+                    </div>
+                    <div class="input_box">
+                        <div class="login_btn" style="display: flex;justify-content: center;">
+                            <div class="btn">
+                                <a href="meeting-videos.html"  id="submit" value="Meeting">Join Meeting</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <p style="margin-top: 20px;" id="message"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+    <script>
+
+        const username = document.getElementById("username");
+        const Meetingid = document.getElementById("Meetingid");
+        const Meetings = document.getElementById("Meetings");
+
+        submit.onclick = function (e) {
+            e.preventDefault();
+            document.getElementById('message').innerHTML = ""
+            const meetimgname = username.value;
+            const meetingId = Meetingid.value;
+
+            if (meetimgname && meetingId) {
+
+                localStorage.setItem("username", meetimgname)
+                localStorage.setItem("meetingId", meetingId)
+                window.location.href = "\meeting-videos.html";
+            } else {
+                document.getElementById('message').innerHTML = "Enter Valid Details"
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>

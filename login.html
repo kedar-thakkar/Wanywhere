@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>wAnywhere</title>
+    <link rel="stylesheet" href="css/style.css" >
+    <link rel="stylesheet" href="css/media.css" >
+</head>
+<body>
+
+    <div class="memoria_div">
+        <div class="login_box_otr">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/wConnect.png" style="max-width:50%">
+                </a>
+            </div>
+            <div class="login_sign_box">
+                <div class="title">
+                    <h3>Login to your account</h3>
+                </div>
+                <div class="form_box">
+                    <div class="input_box">
+                        <label>User Name</label>
+                        <div class="input_box_info input_mail">
+                            <input type="text" id="uname" name="" placeholder="Your e-mail">
+                        </div>
+                    </div>
+                    <div class="input_box">
+                        <label>Password</label>
+                        <div class="input_box_info input_password">
+                            <div class="eye_icon" id="showhide" onclick="toggle_password('pwd0');"></div>
+                            <input type="text" name="" placeholder="Password" id="pwd0">
+                        </div>
+                    </div>                
+                    <div class="input_box">
+                        <div class="login_btn" style="display: flex;justify-content: center;">
+                            <div class="btn">
+                                <a id="submit">Login</a>
+                            </div>
+                            
+                        </div>
+                        <p class="text-center" style="margin-top: 20px;" id="message"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+   <script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+   <script >  
+
+    const uname = document.getElementById("uname");
+    const pwd0 = document.getElementById("pwd0");
+    const submit = document.getElementById("submit");    
+    
+        function toggle_password(target){
+            var d = document;
+            var tag = d.getElementById(target);
+            var tag2 = d.getElementById("showhide");
+
+            if (tag2.innerHTML == 'Show'){
+                tag.setAttribute('type', 'text');   
+                tag2.innerHTML = 'Hide';
+
+            } else {
+                tag.setAttribute('type', 'password');   
+                tag2.innerHTML = 'Show';
+            }
+        }
+
+        submit.onclick = function (e) {
+            e.preventDefault();
+            document.getElementById('message').innerHTML = "" 
+            const name = uname.value;
+            const password = pwd0.value;
+ 
+            if (name && password) {
+                localStorage.setItem("name", name)
+                localStorage.setItem("password", password)
+                window.location.href = "\User-Meeting-Detail.html";
+            }else{
+                document.getElementById('message').innerHTML = "Enter valid details"
+            }
+        }
+   </script>
+   
+</body>
+</html>
